@@ -2,16 +2,22 @@
 #include<stdlib.h>
 int main()
 {
-    int num;
-    scanf("%d",&num);
-    int rem;
-    if(num%2==1)
-    {
-        printf("Motu");
-    }
-    else
-    {
-        printf("Patlu");
-    }
-    return 0;
+int N,itr,sum=0,prev;
+scanf("%d",&N);
+for(itr=1;itr<N;itr++)
+{
+if(sum<N)
+{
+prev=sum;
+sum=sum+itr+itr*2;
+}
+else
+break;
+}
+itr--;
+sum=N-prev;
+if(sum<=itr)
+printf("Patlu");
+else
+printf("Motu");
 }
