@@ -1,23 +1,26 @@
 #include<stdio.h>
-#include<stdlib.h>
-int main()
+void main()
 {
-int N,itr,sum=0,prev;
-scanf("%d",&N);
-for(itr=1;itr<N;itr++)
-{
-if(sum<N)
-{
-prev=sum;
-sum=sum+itr+itr*2;
-}
-else
-break;
-}
-itr--;
-sum=N-prev;
-if(sum<=itr)
-printf("Patlu");
-else
-printf("Motu");
+    int N,i=1,a[2],m;
+    scanf("%d",&N);
+    while(N>0)
+    {
+        if((N-i)<=0)
+          {
+              m=1;
+                break;
+          }
+        N=N-i;
+        if((N-2*i)<=0)
+        {
+              m=2;
+              break;
+        }
+        N=N-2*i;
+        i++;
+    }
+    if(m==1)
+        printf("Patlu");
+    else if(m==2)
+        printf("Motu");
 }
